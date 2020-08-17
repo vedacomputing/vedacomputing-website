@@ -61,7 +61,7 @@ skill:
     - title: Visual Studio Code
       logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png
       description: Details coming soon, contact me if you want to know more
-experience:
+rojects:
   enable: false
   item:
     - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793271/logos/logos_google_id6v9a.svg
@@ -75,12 +75,11 @@ hackathons:
       description: Climate change simulator
       image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793405/stickers/Hack_Cambridge_101_ozoq5d.png
       url: none
-certifications:
+tutorials:
   enable: false
-  item:
-    - title: Microsoft Azure Fundamentals
-      image: https://res.cloudinary.com/samrobbins/image/upload/v1592501459/microsoft-certified-fundamentals-badge_cpcgyn.svg
-      url: https://www.youracclaim.com/badges/b4cf7a86-eb83-478e-bfd0-9f427c3474a0/public_url
+  filter:
+    - label: youtube tutorial
+      value: youtube-tutorial
 education:
   enable: false
   item:
