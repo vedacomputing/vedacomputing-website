@@ -11,10 +11,9 @@ jobs:
     - name: Check out code
       uses: actions/checkout@master
     - name: Build Hugo
-      uses: lowply/build-hugo@v0.71.1
+      uses: vedacomputing/build-hugo@v0.71.1
     - name: Deploy to Firebase
-      uses: lowply/deploy-firebase@v0.0.4
+      uses: vedacomputing/deploy-firebase@v0.0.4
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        FIREBASE_PROJECT: name-of-the-project
-        TARGET_BRANCH: main
+        FIREBASE_PROJECT: vedacomputing-3d1f5
