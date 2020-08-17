@@ -34,7 +34,7 @@ googleAnalytics = ""
 
   [[menu.main]]
   name = "Tutorials"
-  URL = "Tutorials"
+  URL = "tutorials"
   weight=3
 
   [[menu.main]]
