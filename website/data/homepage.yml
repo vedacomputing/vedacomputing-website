@@ -1,0 +1,101 @@
+---
+banner:
+  title: Hi! I'm Gustavo - aka VedaComputing
+social:
+  twitter: vedacomputing
+  linkedin: vedacomputing
+  github: vedacomputing
+  instagram: vedacomputing
+  gmail: vedacomputing
+about:
+  enable: true
+  content: Developer, Administrator, Creator and Teacher.
+  button:
+    btnText: Find out more
+    URL: "/about"
+skill:
+  enable: true
+  item:
+    - title: HTML5
+      logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png
+      description: Details coming soon, contact me if you want to know more
+    - title: Sass
+      logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png
+      description: Details coming soon, contact me if you want to know more
+    - title: JavaScript
+      logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png
+      description: Details coming soon, contact me if you want to know more
+    - title: Angular
+      logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/angular/angular.png
+      description: Details coming soon, contact me if you want to know more
+    - title: NodeJS
+      logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png
+      description: Details coming soon, contact me if you want to know more
+    - title: NestJS
+      logo: https://camo.githubusercontent.com/c4fd9ae4b5274b73d4d51c42263409ce74572040/68747470733a2f2f6e6573746a732e636f6d2f696d672f6c6f676f2d736d616c6c2e737667
+      description: Details coming soon, contact me if you want to know more
+    - title: Hugo
+      logo: https://raw.githubusercontent.com/vedacomputing/vedacomputing/master/icons/hugo.svg
+      description: Details coming soon, contact me if you want to know more
+    - title: MySQL
+      logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png
+      description: Details coming soon, contact me if you want to know more
+    - title: Mongodb
+      logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mongodb/mongodb.png
+      description: Details coming soon, contact me if you want to know more
+    - title: GIT
+      logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png
+      description: Details coming soon, contact me if you want to know more
+    - title: Github
+      logo: https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png
+      description: Details coming soon, contact me if you want to know more
+    - title: Terminal
+      logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png
+      description: Details coming soon, contact me if you want to know more
+    - title: Google Cloud Platform
+      logo: https://avatars0.githubusercontent.com/u/2810941?s=200&v=4
+      description: Details coming soon, contact me if you want to know more
+    - title: Nrwl NX
+      logo: https://github.com/nrwl/nx/blob/master/images/nx-logo.png?raw=true
+      description: Details coming soon, contact me if you want to know more
+    - title: Visual Studio Code
+      logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png
+      description: Details coming soon, contact me if you want to know more
+experience:
+  enable: false
+  item:
+    - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793271/logos/logos_google_id6v9a.svg
+      title: init.g
+      company: Google
+      duration: November 2019
+hackathons:
+  enable: false
+  item:
+    - title: Hack Cambridge 2019
+      description: Climate change simulator
+      image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793405/stickers/Hack_Cambridge_101_ozoq5d.png
+      url: none
+certifications:
+  enable: false
+  item:
+    - title: Microsoft Azure Fundamentals
+      image: https://res.cloudinary.com/samrobbins/image/upload/v1592501459/microsoft-certified-fundamentals-badge_cpcgyn.svg
+      url: https://www.youracclaim.com/badges/b4cf7a86-eb83-478e-bfd0-9f427c3474a0/public_url
+education:
+  enable: false
+  item:
+    - title: BSc Computer Science
+      year: 2018 - Present
+      academy: Durham University
+      image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793268/logos/logos_Durham_fc2sae.svg
+leadership:
+  enable: false
+  item:
+    - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793280/logos/logos_yl_qozav6.webp
+      title: Young Leader
+      company: The Scout Association
+      duration: September 2014 - July 2018
+portfolio:
+  filter:
+    - label: Web Dev
+      value: web-dev
