@@ -2,7 +2,7 @@ name: Hugo Website Build and Firebase Deploy
 on:
   push:
     branches:
-    - main
+    - master
 jobs:
   main:
     name: Build and Deploy
