@@ -1,8 +1,8 @@
 ---
-title: "Making a new Website"
+title: "Blog Test"
 date: 2019-12-31T12:14:34+06:00
 image: "https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg"
-description: "My first blog, introducing my new website"
+description: "Blog Test"
 author: "Sam Robbins"
 type: "post"
 ---

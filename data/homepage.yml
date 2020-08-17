@@ -61,8 +61,8 @@ skill:
     - title: Visual Studio Code
       logo: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png
       description: Details coming soon, contact me if you want to know more
-rojects:
-  enable: false
+projects:
+  enable: enable
   item:
     - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793271/logos/logos_google_id6v9a.svg
       title: init.g
@@ -76,7 +76,7 @@ hackathons:
       image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793405/stickers/Hack_Cambridge_101_ozoq5d.png
       url: none
 tutorials:
-  enable: false
+  enable: enable
   filter:
     - label: youtube tutorial
       value: youtube-tutorial
