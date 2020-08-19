@@ -167,7 +167,7 @@
             style="padding-left: 20px; padding-right: 20px">
 
             {{ $GitHubUrlPre := "https://api.github.com" }}
-            {{ $repo := getJSON $urlPre "/users/vedacomputing/repos" }}   
+            {{ $repo := getJSON $GitHubUrlPre "/users/vedacomputing/repos" }}   
 
             {{ range first 5 $repo }}
             <div>
