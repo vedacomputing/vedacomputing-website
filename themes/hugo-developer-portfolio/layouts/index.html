@@ -78,43 +78,6 @@
 
 <!-- /about -->
 
-
-<!-- portfolio -->
-
-{{ if .Site.Data.homepage.portfolio.enable }}
-
-<section class="uk-margin-large-bottom uk-margin-large-top">
-    <div class="uk-container">
-        <h1 class="uk-heading-line  uk-heading-medium"><span>Portfolio</span></h1>
-        {{ range .Site.Data.homepage.portfolio.item }}
-        <div>
-        <h2 class="uk-text-center uk-text-bold uk-margin-large-top"> {{.title}} </h2>
-        <div class="uk-flex uk-flex-center">
-        <img src="{{.image}}" class="uk-width-medium uk-width-large@s uk-height-large contain" >
-        </div>
-        <p class="uk-text-center">{{.description}}</p>  
-        <div class="uk-flex uk-flex-center">
-            <div uk-grid>
-                {{ range .tools}}
-            <div>
-                <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/{{.}}.svg" />
-            </div>
-            {{end}}
-            </div>
-        </div>
-        <div class="uk-flex uk-flex-center uk-margin-medium-top"> 
-        <a href="{{.link}}" class="uk-text-center">Find out more</a>
-        </div>
-        </div>
-        {{end}}
-
-</section>
-
-{{ end }}
-
-<!-- /portfolio -->
-
-
 <!-- Skills -->
 {{ if .Site.Data.homepage.skill.enable }}
 
@@ -159,70 +122,86 @@
 
 {{ if .Site.Data.homepage.projects.enable }}
 
-<section class="uk-margin-large-bottom">
+<section class="uk-margin-xlarge-bottom">
     <div class="uk-container">
-        <h1 class="uk-heading-line  uk-heading-medium"><span>Latest Projects</span></h1>
 
-        <div class="uk-child-width-1-6@l uk-child-width-1-3@m uk-child-width-1-3@s uk-child-width-1-2 uk-text-center uk-flex-center" 
-            uk-grid>
+        <h1 class="uk-heading-line uk-heading-medium  uk-margin-large-bottom"><span>Latest Projects</span></h1>
+        <p class="uk-text-center uk-text-lead">Lastest Projects, go to the <i>Projects Page</i> to see all of them.</p>
+
+        <div class="uk-grid-large uk-child-width-1-3@s uk-child-width-1  uk-text-center uk-flex-center" uk-grid
+            style="padding-left: 20px; padding-right: 20px">
 
             {{ $GitHubUrlPre := "https://api.github.com" }}
-            {{ $repo := getJSON $GitHubUrlPre "/users/vedacomputing/repos" }}   
+            {{ $repo := getJSON $GitHubUrlPre "/users/vedacomputing/repos?sort=updated" }}   
 
             {{ range first 5 $repo }}
-
-            <div class="imagemargin">
-                <img class="contain skills" src="{{.html_url}}/github/logo" alt="{{.owner.login}}" loading="lazy" style="cursor: pointer"
-                    uk-toggle="target: #{{ replace (replace .title " " "_") "." "_" }}">
-                <h3>{{.name }}</h3>
-                <p>{{.description}}</p>
-            </div>
-            <!-- <div>
-                <div class="uk-card uk-card-default uk-height-large">
+            <div>
+                <div class="uk-card uk-card-default uk-height-max-large">
                     <div class="uk-card-media-top">
-                        <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px" loading="lazy">
+                        <a href="{{.html_url}}" class="imagemargin" target="blank">
+                            <img class="contain projects" src="https://raw.githubusercontent.com/{{.full_name}}/master/github/logo/logo.svg" alt="{{.owner.login}}" loading="lazy" style="padding: 20px">
+                        </a>
                     </div>
-                    <div class="uk-card-body" style="padding: initial">
+                    <div class="uk-card-body" style="padding-top: 0">
                         <div style="height: 5em">
                             <h3 class="uk-card-title uk-heading-small">{{.name}}</h3>
                         </div>
                         <p>{{.description}}</p>
+                        <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/vedacomputing/{{.name}}">
+                        <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/vedacomputing/{{.name}}">
+                        <img alt="GitHub forks" src="https://img.shields.io/github/forks/vedacomputing/{{.name}}?style=social">
+                        <img alt="GitHub stars" src="https://img.shields.io/github/stars/vedacomputing/{{.name}}?style=social">
+                        <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/vedacomputing/{{.name}}?style=social">
                     </div>
-                </div>
-            </div> -->
+                </div>  
+            </div>
+            
+
+
             {{ end }}
         </div>
+    </div>
+
 </section>
 {{ end }}
 
 <!-- ./Projects -->
 
-
-
-
-
-
 <!-- Blog Posts -->
 
 {{ if .Site.Data.homepage.blogposts.enable }}
 
-
-<section class="uk-margin-large-top uk-margin-medium-bottom">
+<section class="uk-margin-xlarge-bottom">
     <div class="uk-container">
-        <h1 class="uk-heading-line  uk-heading-medium"><span>Blog Posts</span></h1>
 
-        <p class="uk-text-center uk-text-lead"><i>Click the images below to view the proof</i></p>
-        <div class="uk-child-width-1-6@l uk-child-width-1-3@m uk-child-width-1-3@s uk-child-width-1-2 uk-text-center uk-flex-center"
-             uk-grid >
-            {{ range .Site.Data.homepage.blogposts.item }}
-            <a href="{{.url}}" class="imagemargin">
-                <img class="contain certs" src="{{.image}}" alt="{{.title}}" loading="lazy" style="cursor: pointer">
-                {{.title}}
-            </a>
+        <h1 class="uk-heading-line uk-heading-medium  uk-margin-large-bottom"><span>Blog Posts</span></h1>
+        <p class="uk-text-center uk-text-lead">Lastest Blogs, go to the <i>Blog Page</i> to see all of them.</p>
+
+        <div class="uk-grid-large uk-child-width-1-3@s uk-child-width-1  uk-text-center uk-flex-center" uk-grid
+            style="padding-left: 20px; padding-right: 20px">
+
+            {{ range last 5 ( where .Site.RegularPages "Section" "blog") }}
+            <div>
+                <div class="uk-card uk-card-default uk-height-max-large">
+                    <div class="uk-card-media-top">
+                        <a href="{{.Permalink | relURL}}" class="imagemargin" target="blank">
+                            <img class="contain projects" src="{{.Params.image}}" alt="{{.Params.author}}" loading="lazy" style="padding: 20px">
+                        </a>
+                    </div>
+                    <div class="uk-card-body" style="padding-top: 0">
+                        <div style="height: 5em">
+                            <h3 class="uk-card-title uk-heading-small">{{.Params.title}}</h3>
+                        </div>
+                        <h4>by {{.Params.author}}</h4>
+                        <p>{{.Params.description}}</p>
+                    </div>
+                </div>  
+            </div>
+            
+
 
             {{ end }}
         </div>
-
     </div>
 
 </section>
@@ -237,22 +216,44 @@
 
 {{ if .Site.Data.homepage.tutorials.enable }}
 
-<section class="uk-margin-large-top uk-margin-medium-bottom">
+<section class="uk-margin-xlarge-bottom">
     <div class="uk-container">
-        <h1 class="uk-heading-line uk-heading-medium"><span>Tutorials</span></h1>
 
-        <div class="uk-child-width-1-6@l uk-child-width-1-3@m uk-child-width-1-3@s uk-child-width-1-2 uk-text-center uk-flex-center"
-            uk-grid uk-height-match="target: > div > h4">
-            {{ range .Site.Data.tutorials.tutorials.item }}
-            <div class="imagemargin">
-                <img class="contain certs" src="{{.image}}" alt="{{.title}}" loading="lazy" >
-                <h4>{{.title}}</h4>
-                <p>{{.event}}</p>
-                </div>
+        <h1 class="uk-heading-line uk-heading-medium  uk-margin-large-bottom"><span>Tutorials</span></h1>
+        <p class="uk-text-center uk-text-lead">Lastest Tutorials, go to the <i>Tutorials Page</i> to see all of them.</p>
+
+
+        <div class="uk-grid-large uk-child-width-1-3@s uk-child-width-1  uk-text-center uk-flex-center" uk-grid
+            style="padding-left: 20px; padding-right: 20px">
+
+            {{ $YoutubeUrlPre := "https://api.github.com" }}
+            {{ $videos := getJSON $YoutubeUrlPre "/users/vedacomputing/gists" }}   
+ 
+            {{ range first 5 $videos }}
+            <div>
+                <div class="uk-card uk-card-default uk-height-max-large">
+                    <div class="uk-card-media-top">
+                        <a href="url here" class="imagemargin" target="blank">
+                            <img class="contain projects" src="logohere" alt="" loading="lazy" style="padding: 20px">
+                        </a>
+                    </div>
+                    <div class="uk-card-body" style="padding-top: 0">
+                        <div style="height: 5em">
+                            <h3 class="uk-card-title uk-heading-small">put name here</h3>
+                        </div>
+                        <p>description here</p>
+                    </div>
+                </div>  
+            </div>
+            
+
+            {{ else }}
+
+            <p class="uk-text-center uk-text-lead"><i>No Tutorials have being Uploaded, Sorry.</i></p>
+
 
             {{ end }}
         </div>
-
     </div>
 
 </section>
@@ -261,83 +262,46 @@
 
 <!-- /Tutorials -->
 
-<!--Hackathons-->
-{{ if .Site.Data.homepage.hackathons.enable }}
-
-<section class="uk-margin-large-bottom">
-    <div class="uk-container">
-        <h1 class="uk-heading-line uk-heading-medium "><span>Hackathons</span></h1>
-    </div>
-    <p class="uk-text-center uk-text-lead"><i>Hover over the logos to find out more</i></p>
-</section>
-<div class="uk-container uk-margin-large-bottom uk-text-center">
-    <ul id="hexGrid">
-        {{range .Site.Data.homepage.hackathons.item}}
-        <li class="hex">
-            <div class="hexIn">
-                <div class="hexLink">
-                    <img src="{{.image}}" alt="{{.title}}" loading="lazy" />
-                    {{if eq .url "none"}}
-                    <div style="all:unset">
-
-                        <h1>
-                            {{.title}}</h1>
-                    </div>
-                    {{else}}
-                    <a href="{{.url}}" class="text unset">
-
-                        <h1>
-                            {{.title}}</h1>
-                    </a>
-
-                    {{end}}
-                    {{if eq .url "none"}}
-                    <div style="all:unset">
-                        <p>
-                            {{.description}}</p>
-                    </div>
-                    {{else}}
-                    <a href="{{.url}}" class="text unset">
-                        <p>
-                            {{.description}}</p>
-                    </a>
-                    {{end}}
-                </div>
-            </div>
-        </li>
-        {{end}}
-    </ul>
-</div>
-{{end}}
-
 <!-- education -->
 
-{{ if .Site.Data.homepage.education.enable }}
+{{ if .Site.Data.homepage.learning.enable }}
 
 <section class="uk-margin-xlarge-bottom">
     <div class="uk-container">
 
-        <h1 class="uk-heading-line uk-heading-medium  uk-margin-large-bottom"><span>Education</span></h1>
+        <h1 class="uk-heading-line uk-heading-medium  uk-margin-large-bottom"><span>Learning</span></h1>
+        <p class="uk-text-center uk-text-lead">Lastest Courses, go to the <i>Learning Page</i> to see all of them.</p>
 
-
-        <div class=" uk-grid-large uk-child-width-1-3@s uk-child-width-1  uk-text-center uk-flex-center" uk-grid
+        <div class="uk-grid-large uk-child-width-1-3@s uk-child-width-1  uk-text-center uk-flex-center" uk-grid
             style="padding-left: 20px; padding-right: 20px">
 
-            {{ range .Site.Data.homepage.education.item }}
+            {{ $YoutubeUrlPre := "https://api.github.com" }}
+            {{ $repo := getJSON $YoutubeUrlPre "/users/vedacomputing/repos?sort=updated" }}   
+
+            {{ range first 5 $repo }}
             <div>
                 <div class="uk-card uk-card-default uk-height-max-large">
                     <div class="uk-card-media-top">
-                        <img class="contain experience" src="{{.image}}" alt="" style="padding: 20px" loading="lazy">
+                        <a href="{{.html_url}}" class="imagemargin" target="blank">
+                            <img class="contain projects" src="https://raw.githubusercontent.com/{{.full_name}}/master/github/logo/logo.svg" alt="{{.owner.login}}" loading="lazy" style="padding: 20px">
+                        </a>
                     </div>
                     <div class="uk-card-body" style="padding-top: 0">
                         <div style="height: 5em">
-                            <h3 class="uk-card-title">{{.academy}}</h3>
+                            <h3 class="uk-card-title uk-heading-small">{{.name}}</h3>
                         </div>
-                        <p style="height: 4em">{{.title}}</p>
-                        <p>{{.year}}</p>
+                        <p>{{.description}}</p>
+                        <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/vedacomputing/{{.name}}">
+                        <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/vedacomputing/{{.name}}">
+                        <img alt="GitHub forks" src="https://img.shields.io/github/forks/vedacomputing/{{.name}}?style=social">
+                        <img alt="GitHub stars" src="https://img.shields.io/github/stars/vedacomputing/{{.name}}?style=social">
+                        <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/vedacomputing/{{.name}}?style=social">
                     </div>
-                </div>
+                </div>  
             </div>
+            
+
+
             {{ end }}
         </div>
     </div>

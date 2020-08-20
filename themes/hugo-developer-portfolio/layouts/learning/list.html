@@ -3,41 +3,33 @@
 <section>
   <div class="uk-container uk-margin-xlarge-bottom">
     <div uk-filter="target: .js-filter">
-      <ul class="uk-subnav uk-subnav-pill uk-subnav-divider">
-        <li uk-filter-control><a href="#">All</a></li>
-        {{ range .Site.Data.portfolio.filter }}
-
-        <li uk-filter-control="[data-tags*='{{.value}}']">
-          <a href="#">{{.label}}</a>
-        </li>
-
-        {{end}}
-      </ul>
-
       <ul
         class="js-filter uk-child-width-1-1 uk-child-width-1-4@m uk-text-center"
         uk-grid
         uk-height-match="target: > li > div > .fixy"
       >
-        {{ range .Data.Pages }}
-        <li data-tags="{{delimit .Params.categories  ' '}}">
+            {{ $GitHubUrlPre := "https://api.github.com" }}
+            {{ $repo := getJSON $GitHubUrlPre "/users/vedacomputing/repos?sort=updated" }}   
+
+            {{ range $repo }}
+        <li>
           <div class="uk-card uk-card-default" style="position: relative;">
             <div class="fixy">
               <div class="uk-card-media-top">
                 <img
                   class="contain experience"
-                  src="{{.Params.Image | absURL}}"
-                  alt=""
+                  src="https://raw.githubusercontent.com/{{.full_name}}/master/github/logo/logo.svg"
+                  alt="{{.owner.login}}"
                 />
               </div>
               <div class="uk-card-body">
-                <h3 class="uk-card-title">{{.Title}}</h3>
-                <p>{{.Params.Description}}</p>
+                <h3 class="uk-card-title">{{.name}}</h3>
+                <p>{{.description}}</p>
               </div>
             </div>
 
             <div class="uk-card-footer">
-              <a href="{{.Permalink| relURL}}" class="uk-button uk-button-text"
+              <a href="{{.html_url}}" class="uk-button uk-button-text"
                 >Read more</a
               >
             </div>
