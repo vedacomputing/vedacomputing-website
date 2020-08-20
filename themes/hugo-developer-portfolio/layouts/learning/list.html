@@ -8,10 +8,10 @@
         uk-grid
         uk-height-match="target: > li > div > .fixy"
       >
-            {{ $GitHubUrlPre := "https://api.github.com" }}
-            {{ $repo := getJSON $GitHubUrlPre "/users/vedacomputing/repos?sort=updated" }}   
+            {{ $YoutubeUrlPre := "https://api.github.com" }}
+            {{ $videos := getJSON $YoutubeUrlPre "/users/vedacomputing/gists" }}   
 
-            {{ range $repo }}
+            {{ range $videos }}
         <li>
           <div class="uk-card uk-card-default" style="position: relative;">
             <div class="fixy">
@@ -35,7 +35,10 @@
             </div>
           </div>
         </li>
-        {{end}}
+            {{ else }}
+            </ul>
+              <p class="uk-text-center uk-text-lead"><i>No Courses have being Uploaded, Sorry.</i></p>
+            {{end}}
       </ul>
     </div>
   </div>
