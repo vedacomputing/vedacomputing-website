@@ -14,6 +14,7 @@ Website built on Hugo, built and deployed via github actions to firebase hosting
   - lowply/deploy-firebase
   - lowply/build-hugo
 - Firebase Hosting
+- Github API
 
 ---
 
@@ -26,3 +27,5 @@ Website built on Hugo, built and deployed via github actions to firebase hosting
 ## What is next
 
 Adding firebase functions to improve the code, allow for automatic updates to the source code based on entries in other sites.
+Adding Youtube API for video aggregation
+Adding Linkedin API for courses aggregation.
